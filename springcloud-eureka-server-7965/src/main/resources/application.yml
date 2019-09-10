@@ -1,0 +1,15 @@
+server:
+  port: 7965
+eureka:
+  # eureka服务的实例名
+  instance:
+    # eureka服务的主机名
+    hostname: localhost
+  client:
+    # 表示是否将当前服务注册到eureka
+    register-with-eureka: false
+    # fetch(抓取) 表示是否从eureka服务获取服务信息
+    fetch-registry: false
+    service-url:
+      # eureka客户端注册或者发现服务的地址
+      defaultZone: http://localhost:${server.port}/eureka/
