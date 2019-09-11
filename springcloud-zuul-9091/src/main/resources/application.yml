@@ -1,0 +1,27 @@
+server:
+  port: 9091
+
+spring:
+  application:
+    name: zuul-proxy
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7965/eureka/
+    register-with-eureka: false
+    fetch-registry: true
+  instance:
+    prefer-ip-address: true
+zuul:
+  routes:
+    # 针对springcloud-provider的配置, 最终决定是针对springcloud-provider进行相关配置
+    # 是serviceId的值。在使用上会将 serviceId的值和名字保持一致
+    springcloud-provider:
+      serviceId: springcloud-provider
+      path: /sp/**
+    springcloud-consumer:
+      serviceId: springcloud-consumer
+      path: /sc/**
+  ignored-services: '*'
+  prefix: /v1

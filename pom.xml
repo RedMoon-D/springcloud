@@ -13,6 +13,8 @@
       <module>springcloud-consumer-8080</module>
         <module>springcloud-commons</module>
         <module>springcloud-provider-8002</module>
+        <module>../springboot/springcloud-zuul-9090</module>
+      <module>springcloud-zuul-9091</module>
     </modules>
     <packaging>pom</packaging>
 

@@ -7,7 +7,7 @@ eureka:
     prefer-ip-address: true
   client:
     # 表示是否将当前服务注册到eureka
-    register-with-eureka: false
+    register-with-eureka: true
     # fetch(抓取) 表示是否从eureka服务获取服务信息
     fetch-registry: true
     service-url:
@@ -17,3 +17,7 @@ eureka:
 spring:
   application:
     name: springcloud-consumer
+feign:
+  hystrix:
+    #开启熔断
+    enabled: true
